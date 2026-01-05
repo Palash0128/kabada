@@ -19,6 +19,7 @@ const main = async () => {
   const errors = []
 
   console.time('1')
+  console.time('1')
   await eachOfLimit(data, 45, async (item, index) => {
     console.log('1', parseInt(index.toString()) + 1, data.length)
     console.timeLog('1')
