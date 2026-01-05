@@ -15,7 +15,7 @@ export const DriveMedicalUpdate = async ({ fileName, url }) => {
   // )
 
   const cookieString =
-    'us-cartCount=0; ROUTE=.accstorefront-74647c5bc-tcswd; JSESSIONID=29503C30E1BC6EC2B3A2FF8F551389EC.accstorefront-74647c5bc-tcswd; acceleratorSecureGUID=389075a6f078baf8fa0120b16ffe0e66e55318b1; us-userLoggedIn=true'
+    'us-cartCount=0; ROUTE=.accstorefront-86f8c578d-gchxk; JSESSIONID=6C56ECDA1781CD356CB2C2AC98951D7F.accstorefront-86f8c578d-gchxk; acceleratorSecureGUID=0ed163c928e2c2b15a1317b51867a0eaf5a062d7; us-userLoggedIn=true'
 
   const client = axios.create({
     headers: {
@@ -69,15 +69,13 @@ export const DriveMedicalUpdate = async ({ fileName, url }) => {
 
       $('.selectUnit.qty-unit > option').each((_, el) => {
         values.push({
-          text: $(el).text().split('/')[0],
+          text: $(el).text().split('/')[0].trim(),
           value: $(el).attr('value'),
           packaging: $(el).text().split('/')[1],
           unit: $(el).text(),
           UPC
         })
       })
-
-      console.log({ values })
 
       let url = 'https://shop.drivemedical.com' + res.request.path.split('?')[0]
 
